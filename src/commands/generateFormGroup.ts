@@ -7,9 +7,10 @@ export function generateFormGroup(program: Command) {
         .alias('fg')
         .description('Generat a form group of multiple fields.')
         .option('-n, --name <name>', 'Name of your files.', 'dead-form-group')
+        .option('-g, --groupName <groupName>', 'Name of your form group.', 'form')
         .option(
-            '-g, --groupName <groupName>',
-            'Name of your from group.',
+            '-f, --formGroup <formGroup>',
+            'JSON config of form group.',
             value => JSON.parse(value),
             JSON.stringify([
                 {
