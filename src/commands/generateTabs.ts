@@ -8,7 +8,7 @@ export function generateTabs(program: Command) {
         .description('Generate a tabs element and display child components.')
         .option('-n, --name <name>', 'Set the name of the files.', 'dead-tabs')
         .option('--gc, --groupClasses <groupClasses>', 'p-1rem')
-        .option('-s, --stretchTabs <stretchTabs>', 'Set the tabs to stretchy.', '')
+        .option('-s, --stretchTabs <stretchTabs>', 'Set the tabs to stretchy.', 'mat-stretch-tabs="false"')
         .option('-a, --alignment <alignment>', 'Right, Left, or Center.', 'mat-align-tabs="center"')
         .option(
             '-t, --tabs <tabs>',
