@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { ERRORS, MSGS } from '../utils/utils';
+import { ENDPOINTS } from '../utils/endpoints';
 import { writeGeneratedFiles, GenerationResult } from '../utils/writer';
 
 export interface ImageDiv {
@@ -18,17 +20,15 @@ export async function generateId(options: any): Promise<void> {
         };
 
         const response = await axios.post(
-            'http://127.0.0.1:5001/deadlibrary-53c38/us-central1/generateImageDiv',
+            ENDPOINTS.imageDiv,
             payload
         );
 
         if (response.data.success && response.data.result) {
-            console.log('Generated ImageDiv.');
-            const baseName = options.name; // Use the CLI name option
-            // Make a copy of the result to modify if needed
+
+            const baseName = options.name;
             const result: GenerationResult = { ...response.data.result };
       
-            // If you want to generate a SCSS file even if not provided:
             if (!result.scss) {
                 result.scss = ''; // create an empty SCSS file
             }
@@ -46,8 +46,10 @@ export async function generateId(options: any): Promise<void> {
                 result,
                 filenameMap
             });
+            
+            console.log(MSGS.SUCCESS);
           } else {
-            console.error('Response indicated failure or missing result.');
+            console.error(ERRORS.HANDLER_TRY);
           }
     } catch (error: any) {
         console.error('Error:', error.message);

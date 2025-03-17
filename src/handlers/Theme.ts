@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { ERRORS, MSGS } from '../utils/utils';
+import { ENDPOINTS } from '../utils/endpoints';
 import { writeGeneratedFiles, GenerationResult } from '../utils/writer';
 
 export interface Theme {
@@ -42,16 +44,13 @@ export async function generateTh(options: any): Promise<void> {
         }
 
         const response = await axios.post(
-            'http://127.0.0.1:5001/deadlibrary-53c38/us-central1/generateTheme',
+            ENDPOINTS.theme,
             payload
         );
 
         if (response.data.success && response.data.result) {
-            console.log('Generated GridList.');
-            const baseName = options.name; // Use the CLI name option
-            // Make a copy of the result to modify if needed
+            const baseName = options.name;
             const result: GenerationResult = { ...response.data.result };
-            // Define filename templates. You can customize these as needed.
             const filenameMap = {
                 scss: '{name}.component.scss'
             };
@@ -62,8 +61,10 @@ export async function generateTh(options: any): Promise<void> {
                 result,
                 filenameMap
             });
+
+            console.log(MSGS.SUCCESS);
           } else {
-            console.error('Response indicated failure or missing result.');
+            console.error(ERRORS.HANDLER_TRY);
           }
     } catch (error: any) {
         console.error('Error', error.message);

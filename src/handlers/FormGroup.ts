@@ -22,19 +22,18 @@ export async function generateFg(options: any): Promise<void> {
         const payload: FormGroup = {
             name: options.name || 'dead-form-group',
             groupName: options.groupName || 'formGroup',
-            formGroup: options.formGroup ?
-            JSON.parse(options.formGroup) :
+            formGroup: options.formGroup ||
             [
                 {
-                    fieldAppearance: 'outline',
-                    fieldClasses: 'm-1rem',
-                    fieldLabel: 'fieldLabel',
-                    fieldLabelClasses: 'small-text',
-                    inputPlaceholder: 'Placeholder',
-                    inputClasses: 'p-1rem',
-                    inputType: 'text',
-                    controlName: 'controlName',
-                    reqiured: ''
+                    fieldAppearance: "outline",
+                    fieldClasses: "m-1rem",
+                    fieldLabel: "fieldLabel",
+                    fieldLabelClasses: "small-text",
+                    inputPlaceholder: "Placeholder",
+                    inputClasses: "p-1rem",
+                    inputType: "text",
+                    controlName: "controlName",
+                    required: "required"
                 }
             ]
         }
