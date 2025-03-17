@@ -14,15 +14,15 @@ export function generateFormGroup(program: Command) {
             value => JSON.parse(value),
             JSON.stringify([
                 {
-                    fieldAppearance: 'outline',
-                    fieldClasses: 'm-1rem',
-                    fieldLabel: 'fieldLabel',
-                    fieldLabelClasses: 'small-text',
-                    inputPlaceholder: 'Placeholder',
-                    inputClasses: 'p-1rem',
-                    inputType: 'text',
-                    controlName: 'controlName',
-                    reqiured: ''
+                    fieldAppearance: "outline",
+                    fieldClasses: "m-1rem",
+                    fieldLabel: "fieldLabel",
+                    fieldLabelClasses: "small-text",
+                    inputPlaceholder: "Placeholder",
+                    inputClasses: "p-1rem",
+                    inputType: "text",
+                    controlName: "controlName",
+                    required: ""
                 }
             ])
         )
