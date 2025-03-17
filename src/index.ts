@@ -27,7 +27,7 @@ const program = new Command();
 program
     .name('dead')
     .description('Command line interface for DeadLibrary.')
-    .version('1.21.0')
+    .version('1.21.1')
 
 generateButton(program);
 generateCard(program);
