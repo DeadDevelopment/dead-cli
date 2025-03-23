@@ -48,9 +48,9 @@ export async function generateId(options: any): Promise<void> {
             });
             
             console.log(MSGS.SUCCESS);
-          } else {
+        } else {
             console.error(ERRORS.HANDLER_TRY);
-          }
+        }
     } catch (error: any) {
         console.error('Error:', error.message);
     }
