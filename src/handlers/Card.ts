@@ -4,13 +4,17 @@ import { ENDPOINTS } from '../utils/endpoints';
 import { writeGeneratedFiles, GenerationResult } from '../utils/writer';
 
 export interface Card {
-    name: string
+    name: string,
+    classes: string,
+    content: string
 }
 
 export async function generateC(options: any): Promise<void> {
     try {
         const payload: Card = {
-            name: options.name || 'dead-card'
+            name: options.name || 'dead-card',
+            classes: options.classes || "m-1rem size-32rem",
+            content: options.content || "ComponentClassName"
         }
 
         const response = await axios.post(
