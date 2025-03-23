@@ -7,7 +7,12 @@ export const ENDPOINTS = {
     formField: `${LOCAL_BASE_URL}generateFormField`,
     formGroup: `${LOCAL_BASE_URL}generateFormGroup`,
     gridList: `${LOCAL_BASE_URL}generateGridList`,
+    icon: `${LOCAL_BASE_URL}generateIcon`,
+    iconParagraph: `${LOCAL_BASE_URL}generateIconParagraph`,
+    imageCarousel: `${LOCAL_BASE_URL}generateImageCarousel`,
     imageDiv: `${LOCAL_BASE_URL}generateImageDiv`,
+    lazyPage: `${LOCAL_BASE_URL}generateLazyPage`,
+    loadingBar: `${LOCAL_BASE_URL}generateLoadingBar`,
     loadingSpinner: `${LOCAL_BASE_URL}generateLoadingSpinner`,
     menu: `${LOCAL_BASE_URL}generateMenu`,
     mobileToolbar: `${LOCAL_BASE_URL}generateMobileToolbar`,
@@ -20,7 +25,6 @@ export const ENDPOINTS = {
     titleSubList: `${LOCAL_BASE_URL}generateTitleSubList`,
     titleSubListButton: `${LOCAL_BASE_URL}generateTitleSubListButton`,
     titleSubParagraph: `${LOCAL_BASE_URL}generateTitleSubParagraph`,
-    titleSubParagraphButton: `{LOCAL_BASE_URL}generateTitleSubParagraphButton`,
+    titleSubParagraphButton: `${LOCAL_BASE_URL}generateTitleSubParagraphButton`,
     toolbar: `${LOCAL_BASE_URL}generateToolbar`,
 }
-
