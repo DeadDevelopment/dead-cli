@@ -9,7 +9,7 @@ export interface LoadingBar {
     classes: string,
 }
 
-export async function generateLc(options: any): Promise<void> {
+export async function generateLbar(options: any): Promise<void> {
     try {
         const payload: LoadingBar = {
             name: options.name || 'dead-loading-bar',
