@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { generateLb } from '../handlers/ListButton';
+import { generateLbar } from '../handlers/LoadingBar';
 
 export function generateLoadingBar(program: Command) {
     program
@@ -11,7 +11,7 @@ export function generateLoadingBar(program: Command) {
         .option('-c, --classes <classes>', 'Set the classes for your loading bar.', 'top center')
         .action(async (options) => {
             try {
-                await generateLb(options);
+                await generateLbar(options);
             } catch (error: any) {
                 console.error('Error generating code:', error.message);
             }
