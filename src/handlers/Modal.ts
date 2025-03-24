@@ -25,7 +25,7 @@ export interface Modal {
     }
 }
 
-export async function genreatemodal(options: any): Promise<void> {
+export async function generatemodal(options: any): Promise<void> {
     try {
         const payload: Modal = {
             name: options.name || 'dead-modal',
