@@ -43,6 +43,12 @@ export async function generateLp(options: any): Promise<void> {
                     "divId": "outlet-id",
                     "name": "yo-outlet",
                     "oClasses": "m-1rem"
+                },
+                {
+                    "divClasses": "m-1rem",
+                    "divId": "outlet-id-1",
+                    "name": "yo-outlet-again",
+                    "oClasses": "m-1rem"
                 }
             ]
         };
