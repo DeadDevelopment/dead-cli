@@ -11,13 +11,13 @@ export function generateImageCarousel(program: Command) {
         .option(
             '-w, --w <w>',
             'Image wrapper config',
-            value => JSON.stringify(value),
+            value => JSON.parse(value),
             JSON.stringify({s: "100", classes: "m-1rem"})
         )
         .option(
             '-i, --imgs <imgs>',
             'Set the images for your carousel.',
-            value => JSON.stringify(value),
+            value => JSON.parse(value),
             JSON.stringify([
                 {
                     "alt": "image 1",
@@ -34,19 +34,19 @@ export function generateImageCarousel(program: Command) {
         .option(
             '-c, --controls <controls>',
             'carousel controls container config',
-            value => JSON.stringify(value),
+            value => JSON.parse(value),
             JSON.stringify({"bclasses": "m-0-5rem", "btype": "mat-mini-fab", "classes": "m-1rem controls"})
         )
         .option(
             '-p, --pIcon <pIcon>',
             'Config the previous image icon',
-            value => JSON.stringify(value),
+            value => JSON.parse(value),
             JSON.stringify({"ariaLabel": "Previous image chevron.", "fontIcon": "chevron_left", "classes": "previous"})
         )
         .option(
             '-n, --nIcon <nIcon>',
             'Config the next image icon',
-            value => JSON.stringify(value),
+            value => JSON.parse(value),
             JSON.stringify({"ariaLabel": "Next image chevron.", "fontIcon": "chevron_right", "classes": "next"})
         )
         .action(async (options) => {
