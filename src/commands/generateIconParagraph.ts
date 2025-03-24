@@ -10,7 +10,7 @@ export function generateIconParagraph(program: Command) {
         .option(
             '-i, --icon <icon>',
             'Icon config',
-            value => JSON.stringify(value),
+            value => JSON.parse(value),
             JSON.stringify({
                 ariaLabel: "Skull Icon.",
                 fontIcon: "Skull",
