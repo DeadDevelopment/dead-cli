@@ -21,13 +21,17 @@ import { generateMobileToolbar } from "./commands/generateMobileToolbar";
 import { generateMenu } from "./commands/generateMenu";
 import { generateFormGroup } from "./commands/generateFormGroup";
 import { generateTabs } from "./commands/generateTabs";
+import { generateIcon } from "./commands/generateIcon";
+import { generateIconParagraph } from "./commands/generateIconParagraph";
+import { generateImageCarousel } from "./commands/generateImageCarousel";
+import { generateLazyPage } from "./commands/generateLazyPage";
 
 const program = new Command();
 
 program
     .name('dead')
     .description('Command line interface for DeadLibrary.')
-    .version('1.21.1')
+    .version('1.25.0')
 
 generateButton(program);
 generateCard(program);
@@ -35,7 +39,11 @@ generateComponentList(program);
 generateFormField(program);
 generateFormGroup(program);
 generateGridList(program);
+generateIcon(program);
+generateIconParagraph(program);
+generateImageCarousel(program);
 generateImageDiv(program);
+generateLazyPage(program);
 generateLoadingSpinner(program);
 generateMobileToolbar(program);
 generateMenu(program);
