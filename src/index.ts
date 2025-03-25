@@ -30,17 +30,22 @@ import { generateSelect } from "./commands/generateSelect";
 import { generateRadioButton } from "./commands/generateRadioButton";
 import { generateModal } from "./commands/generateModal";
 import { generateSlideToggle } from "./commands/generateSlideToggle";
+import { generateDatePicker } from "./commands/generateDatePicker";
+import { generateDivider } from "./commands/generateDivider";
+import { generateSlider } from "./commands/generateSlider";
 
 const program = new Command();
 
 program
     .name('dead')
     .description('Command line interface for DeadLibrary.')
-    .version('1.30.0')
+    .version('1.34.2')
 
 generateButton(program);
 generateCard(program);
 generateComponentList(program);
+generateDatePicker(program);
+generateDivider(program);
 generateFormField(program);
 generateFormGroup(program);
 generateGridList(program);
@@ -56,6 +61,7 @@ generateModal(program);
 generateMenu(program);
 generateRadioButton(program);
 generateSelect(program);
+generateSlider(program);
 generateSlideToggle(program);
 generateTabs(program);
 generateToolbar(program);
