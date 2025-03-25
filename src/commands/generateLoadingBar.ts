@@ -7,7 +7,7 @@ export function generateLoadingBar(program: Command) {
         .alias('lb')
         .description('Generate a loading bar component.')
         .option('-n, --name <name>', 'Name your files.', 'dead-loading-bar')
-        .option('-m, --mode <mode>', 'Set the mode of the loading bar.', "buffer")
+        .option('-m, --mode <mode>', 'Set the mode of the loading bar.', 'buffer')
         .option('-c, --classes <classes>', 'Set the classes for your loading bar.', 'top center')
         .action(async (options) => {
             try {
