@@ -33,7 +33,7 @@ export async function generateslider(options: any): Promise<void> {
                 "step": "step",
                 "disabled": "!disabled",
                 "discrete": "discrete",
-                "showTicks": "false" 
+                "showTicks": "false"
             },
             inputs: options.inputs ? JSON.parse(options.inputs) : [
                 {
@@ -41,7 +41,7 @@ export async function generateslider(options: any): Promise<void> {
                     "classes": "pri-dark pri-lite-bg",
                     "thumbLabel": "matSliderThumb",
                     "value": "20"
-                },
+                }
             ]
         };
 
