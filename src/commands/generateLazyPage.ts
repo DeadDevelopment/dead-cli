@@ -12,16 +12,16 @@ export function generateLazyPage(program: Command) {
             (value) => JSON.parse(value),
             JSON.stringify([
                 {
-                    "component": "./component-one.component.html",
-                    "mName": "ComponentOne",
-                    "outlet": "yo-outlet",
-                    "path": "/routepath"
+                    component: "./component-one.component",
+                    mName: "ComponentOne",
+                    outlet: "yo-outlet",
+                    path: "routepath"
                 },
                 {
-                    "component": "./component-two.component.html",
-                    "mName": "ComponentTwo",
-                    "outlet": "yo-outlet-again",
-                    "path": "/routepathtwo"
+                    component: "./component-two.component",
+                    mName: "ComponentTwo",
+                    outlet: "yo-outlet-again",
+                    path: "routepathtwo"
                 }
             ])
         )
@@ -31,16 +31,16 @@ export function generateLazyPage(program: Command) {
             value => JSON.parse(value),
             JSON.stringify([
                 {
-                    "divClasses": "m-1rem",
-                    "divId": "outlet-id",
-                    "name": "yo-outlet",
-                    "oClasses": "m-1rem"
+                    divClasses: "m-1rem",
+                    divId: "outlet-id",
+                    name: "yo-outlet",
+                    oClasses: "m-1rem"
                 },
                 {
-                    "divClasses": "m-1rem",
-                    "divId": "outlet-id-1",
-                    "name": "yo-outlet-again",
-                    "oClasses": "m-1rem"
+                    divClasses: "m-1rem",
+                    divId: "outlet-id-1",
+                    name: "yo-outlet-again",
+                    oClasses: "m-1rem"
                 }
             ])
         )
