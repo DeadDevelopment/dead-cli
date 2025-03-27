@@ -23,21 +23,21 @@ export async function generateLp(options: any): Promise<void> {
     try {
         const payload: LazyPage = {
             name: options.name || 'dead-lazy-page',
-            routes: options.routes ? JSON.parse(options.routes) : [
+            routes: options.routes || [
                 {
-                    "component": "./component-one.component.html",
+                    "component": "./component-one.component",
                     "mName": "ComponentOne",
                     "outlet": "yo-outlet",
-                    "path": "/routepath"
+                    "path": "routepath"
                 },
                 {
-                    "component": "./component-two.component.html",
+                    "component": "./component-two.component",
                     "mName": "ComponentTwo",
                     "outlet": "yo-outlet-again",
-                    "path": "/routepathtwo"
+                    "path": "routepathtwo"
                 }
             ],
-            outlets: options.outlets ? JSON.parse(options.routes) : [
+            outlets: options.outlets || [
                 {
                     "divClasses": "m-1rem",
                     "divId": "outlet-id",
