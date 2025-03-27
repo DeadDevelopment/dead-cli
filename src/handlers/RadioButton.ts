@@ -21,10 +21,10 @@ export interface RadioButton {
     try {
         const payload: RadioButton = {
             name: options.name || 'dead-redio-button',
-            radioGroup: options.radioGroup || {"alabel": "aria label", "classes": "m-1rem pri-dark", "ngModel": "result"},
-            buttons: options.buttons ? JSON.parse(options.buttons) : [
-                {"classes": "pri-lite-bg small-text", "label": "radio 1", "value": "readio1"},
-                {"classes": "pri-lite-bg small-text", "label": "radio 2", "value": "readio2"}
+            radioGroup: options.radioGroup || {alabel: "aria label", classes: "m-1rem pri-dark", ngModel: "result"},
+            buttons: options.buttons || [
+                {classes: "pri-lite-bg small-text", label: "radio 1", value: "readio1"},
+                {classes: "pri-lite-bg small-text", label: "radio 2", value: "readio2"}
             ]
         };
 
