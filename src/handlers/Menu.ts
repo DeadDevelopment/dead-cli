@@ -23,7 +23,7 @@ export async function generateM(options: any): Promise<void> {
             name: options.name || 'dead-menu',
             position: options.position || '',
             menuTrig: options.menuTrig || {"buttonType": "mat-fab", "classes": "size-4rem", "icon": "menu"},
-            menuItems: options.menuItems ? JSON.parse(options.buttons) : [{"label": "Link", "routerLink": "/route"}],
+            menuItems: options.menuItems || [{"label": "Link", "routerLink": "/route"}],
         };
 
         const response = await axios.post(
