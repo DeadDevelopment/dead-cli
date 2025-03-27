@@ -1,10 +1,10 @@
 import { Command } from 'commander';
 import { generateLb } from '../handlers/ListButton';
 
-export function generateLoadingBar(program: Command) {
+export function generateListButton(program: Command) {
     program
         .command('generateListButton')
-        .alias('lbar')
+        .alias('lb')
         .description('Generate a list button component.')
         .option('-n, --name <name>', 'Name your files.', 'dead-list-button')
         .option(
@@ -12,9 +12,9 @@ export function generateLoadingBar(program: Command) {
             'List config as JSON.',
             value => JSON.parse(value),
             JSON.stringify([
-                { "classes": "m-1rem pri-dark body", "text": "list item 1"},
-                { "classes": "m-1rem pri-dark body", "text": "list item 2"},
-                { "classes": "m-1rem pri-dark small-text", "text": "list item 3"}
+                { classes: "m-1rem pri-dark body", text: "list item 1"},
+                { classes: "m-1rem pri-dark body", text: "list item 2"},
+                { classes: "m-1rem pri-dark small-text", text: "list item 3"}
             ])
         )
         .option(
@@ -22,7 +22,7 @@ export function generateLoadingBar(program: Command) {
             'Button as JSON.',
             value => JSON.parse(value),
             JSON.stringify({
-                "classes": "m-1rem button-text", "label": "click me", "routerLink": "/path"
+                classes: "m-1rem button-text", label: "click me", routerLink: "/path"
             })
         )
         .option(
