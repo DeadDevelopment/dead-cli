@@ -36,23 +36,23 @@ export async function generateIc(options: any): Promise<void> {
     try {
         const payload: ImageCarousel = {
             name: options.name || 'dead-image-carousel',
-            cClasses: options.cClasses || "container", // container classes
-            w: options.w || {"classes": "m-1rem", "s": "100"}, // w = wrapper, s = speed
-            imgs: options.imgs ? JSON.parse(options.imgs) : [
+            cClasses: options.cClasses || "container",
+            w: options.w || {classes: "m-1rem", s: "100"},
+            imgs: options.imgs || [
                 {
-                    "alt": "image 1",
-                    "src": "https://firebasestorage.googleapis.com/v0/b/deaddevelopment-95591.appspot.com/o/dead_skull.PNG?alt=media&token=1634c2ba-f3e8-49db-bfd6-0b49576cba4a",
-                    "classes": "m-1rem skull-logo" 
+                    alt: "image 1",
+                    src: "https://firebasestorage.googleapis.com/v0/b/deaddevelopment-95591.appspot.com/o/dead_skull.PNG?alt=media&token=1634c2ba-f3e8-49db-bfd6-0b49576cba4a",
+                    classes: "m-1rem skull-logo" 
                 },
                 {
-                    "alt": "image 2",
-                    "src": "https://firebasestorage.googleapis.com/v0/b/deaddevelopment-95591.appspot.com/o/dead_skull.PNG?alt=media&token=1634c2ba-f3e8-49db-bfd6-0b49576cba4a",
-                    "classes": "m-1rem skull-logo"
+                    alt: "image 2",
+                    src: "https://firebasestorage.googleapis.com/v0/b/deaddevelopment-95591.appspot.com/o/dead_skull.PNG?alt=media&token=1634c2ba-f3e8-49db-bfd6-0b49576cba4a",
+                    classes: "m-1rem skull-logo"
                 }
             ],
-            controls: options.controls || {"bclasses": "m-0-5rem", "btype": "mat-mini-fab", "classes": "m-1rem controls"},
-            pIcon: options.pIcon || {"ariaLabel": "Previous image chevron.", "fontIcon": "chevron_left", "classes": "previous"},
-            nIcon: options.nIcon || {"ariaLabel": "Next image chevron.", "fontIcon": "chevron_right", "classes": "next"}
+            controls: options.controls || {bclasses: "m-0-5rem", btype: "mat-mini-fab", classes: "m-1rem controls"},
+            pIcon: options.pIcon || {ariaLabel: "Previous image chevron.", fontIcon: "chevron_left", classes: "previous"},
+            nIcon: options.nIcon || {ariaLabel: "Next image chevron.", fontIcon: "chevron_right", classes: "next"}
         };
 
         const response = await axios.post(
