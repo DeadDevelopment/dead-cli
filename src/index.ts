@@ -33,13 +33,14 @@ import { generateSlideToggle } from "./commands/generateSlideToggle";
 import { generateDatePicker } from "./commands/generateDatePicker";
 import { generateDivider } from "./commands/generateDivider";
 import { generateSlider } from "./commands/generateSlider";
+import { generateListButton } from "./commands/generateListButton";
 
 const program = new Command();
 
 program
     .name('dead')
     .description('Command line interface for DeadLibrary.')
-    .version('1.34.2')
+    .version('1.34.3')
 
 generateButton(program);
 generateCard(program);
@@ -54,6 +55,7 @@ generateIconParagraph(program);
 generateImageCarousel(program);
 generateImageDiv(program);
 generateLazyPage(program);
+generateListButton(program);
 generateLoadingBar(program);
 generateLoadingSpinner(program);
 generateMobileToolbar(program);
