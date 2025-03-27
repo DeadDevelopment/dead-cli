@@ -11,15 +11,15 @@ export async function generateRadioButton(program: Command) {
             '-g, --radioGroup <radioGroup>',
             'JSON config for radio button group.',
             value => JSON.parse(value),
-            JSON.stringify({"alabel": "aria label", "classes": "m-1rem pri-dark", "ngModel": "result"})
+            JSON.stringify({alabel: "aria label", classes: "m-1rem pri-dark", ngModel: "result"})
         )
         .option(
             '-b, --buttons <buttons>',
             'JSON config for buttons',
             value => JSON.parse(value),
             JSON.stringify([
-                {"classes": "pri-lite-bg small-text", "label": "radio 1", "value": "readio1"},
-                {"classes": "pri-lite-bg small-text", "label": "radio 2", "value": "readio2"}
+                {classes: "pri-lite-bg small-text", label: "radio 1", value: "readio1"},
+                {classes: "pri-lite-bg small-text", label: "radio 2", value: "readio2"}
             ])
         )
         .action(async (options) => {
