@@ -27,20 +27,20 @@ export async function generateslider(options: any): Promise<void> {
         const payload: Slider = {
             name: options.name || 'dead-slider',
             slider: options.slider || {
-                "classes": "m-1rem",
-                "min": "0",
-                "max": "100",
-                "step": "step",
-                "disabled": "!disabled",
-                "discrete": "discrete",
-                "showTicks": "false"
+                classes: "m-1rem",
+                min: "0",
+                max: "100",
+                step: "step",
+                disabled: "!disabled",
+                discrete: "discrete",
+                showTicks: "false"
             },
-            inputs: options.inputs ? JSON.parse(options.inputs) : [
+            inputs: options.inputs || [
                 {
-                    "ngModel": "inputs.value",
-                    "classes": "pri-dark pri-lite-bg",
-                    "thumbLabel": "matSliderThumb",
-                    "value": "20"
+                    ngModel: "inputs.value",
+                    classes: "pri-dark pri-lite-bg",
+                    thumbLabel: "matSliderThumb",
+                    value: "20"
                 }
             ]
         };
