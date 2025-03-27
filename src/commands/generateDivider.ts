@@ -8,7 +8,7 @@ export function generateDivider(program: Command) {
     .description('Generate a divider component.')
     .option('-n, --name <name>', 'Name of the files.', 'dead-divider')
     .option('-o, --orientation <orientation>', 'Vertical true/false', 'false')
-    .option('-c, --class', 'Set classes', 'm-1rem pri')
+    .option('-c, --classes <classes>', 'Set classes', 'm-1rem pri')
     .action(async (options) => {
         try {
             await generatedivider(options);
