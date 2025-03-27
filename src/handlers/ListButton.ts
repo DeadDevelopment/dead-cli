@@ -22,12 +22,12 @@ export async function generateLb(options: any): Promise<void> {
         const payload: ListButton = {
             name: options.name || 'dead-list-button',
             buttonType: options.buttonType || 'mat-flat-button',
-            list: options.list ? JSON.parse(options.list) : [
-                { "classes": "m-1rem pri-dark body", "text": "list item 1"},
-                { "classes": "m-1rem pri-dark body", "text": "list item 2"},
-                { "classes": "m-1rem pri-dark small-text", "text": "list item 3"},
+            list: options.list || [
+                { classes: "m-1rem pri-dark body", text: "list item 1"},
+                { classes: "m-1rem pri-dark body", text: "list item 2"},
+                { classes: "m-1rem pri-dark small-text", text: "list item 3"},
             ],
-            button: options.button || {"classes": "m-1rem button-text", "label": "click me", "routerLink": "/path"}
+            button: options.button || {classes: "m-1rem button-text", label: "click me", routerLink: "/path"}
         };
 
         const response = await axios.post(
