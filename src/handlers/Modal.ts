@@ -60,6 +60,7 @@ export async function generatemodal(options: any): Promise<void> {
       
             // Define filename templates. You can customize these as needed.
             const filenameMap = {
+                modal: '{name}-modal.html',
                 html: '{name}.component.html',
                 ts: '{name}.component.ts',
                 scss: '{name}.component.scss'
