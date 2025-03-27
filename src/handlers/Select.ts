@@ -26,7 +26,7 @@ export async function generateS(options: any): Promise<void> {
             name: options.name || 'dead-select',
             field: options.field || {"appearance": "outline", "classes": "m-1rem", "required": "required"},
             select: options.select || {"lClasses": "pri", "label": "Select an option"},
-            options: options.options ? JSON.parse(options.options) : [
+            options: options.options || [
                 {"label": "Option 1", "value": "option1"},
                 {"label": "Option 2", "value": "option2"},
                 {"label": "Option 3", "value": "option3"},
@@ -35,7 +35,7 @@ export async function generateS(options: any): Promise<void> {
         };
 
         const response = await axios.post(
-            ENDPOINTS.imageDiv,
+            ENDPOINTS.select,
             payload
         );
 
