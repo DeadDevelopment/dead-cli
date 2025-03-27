@@ -12,13 +12,13 @@ export function generateSlider(program: Command) {
         'JSON config for slider',
         value => JSON.parse(value),
         JSON.stringify({
-            "classes": "m-1rem",
-            "min": "0",
-            "max": "100",
-            "step": "step",
-            "disabled": "!disabled",
-            "discrete": "discrete",
-            "showTicks": "false"
+            classes: "m-1rem",
+            min: "0",
+            max: "100",
+            step: "step",
+            disabled: "!disabled",
+            discrete: "discrete",
+            showTicks: "false"
         })
     )
     .option(
@@ -27,10 +27,10 @@ export function generateSlider(program: Command) {
         value => JSON.parse(value),
         JSON.stringify([
             {
-                "ngModel": "inputs.value",
-                "classes": "pri-dark pri-lite-bg",
-                "thumbLabel": "matSliderThumb",
-                "value": "20"
+                ngModel: "inputs.value",
+                classes: "pri-dark pri-lite-bg",
+                thumbLabel: "matSliderThumb",
+                value: "20"
             }
         ])
     )
