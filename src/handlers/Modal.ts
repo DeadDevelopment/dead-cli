@@ -63,7 +63,8 @@ export async function generatemodal(options: any): Promise<void> {
                 modal: '{name}-modal.html',
                 html: '{name}.component.html',
                 ts: '{name}.component.ts',
-                scss: '{name}.component.scss'
+                scss: '{name}.component.scss',
+                spec: '{name}.component.spec.ts'
             };
       
             await writeGeneratedFiles({

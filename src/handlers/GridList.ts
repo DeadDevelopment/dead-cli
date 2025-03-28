@@ -44,7 +44,8 @@ export async function generateGl(options: any): Promise<void> {
             const filenameMap = {
                 html: '{name}.component.html',
                 ts: '{name}.component.ts',
-                scss: '{name}.component.scss'
+                scss: '{name}.component.scss',
+                spec: '{name}.component.spec.ts'
             };
       
             await writeGeneratedFiles({

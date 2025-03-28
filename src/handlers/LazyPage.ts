@@ -72,7 +72,8 @@ export async function generateLp(options: any): Promise<void> {
                 html: '{name}.component.html',
                 ts: '{name}.component.ts',
                 scss: '{name}.component.scss',
-                router: '{name}.routes.ts'
+                router: '{name}.routes.ts',
+                spec: '{name}.component.spec.ts'
             };
       
             await writeGeneratedFiles({
