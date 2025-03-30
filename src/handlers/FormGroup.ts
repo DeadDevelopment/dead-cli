@@ -4,8 +4,8 @@ import { writeGeneratedFiles, GenerationResult } from '../utils/writer';
 export interface FormGroup {
     name: string,
     groupName: string,
+    fieldAppearance: string,
     formGroup: {
-        fieldAppearance: string,
         fieldClasses: string,
         fieldLabel: string,
         fieldLableClasses: string,
@@ -22,10 +22,10 @@ export async function generateFg(options: any): Promise<void> {
         const payload: FormGroup = {
             name: options.name || 'dead-form-group',
             groupName: options.groupName || 'formGroup',
+            fieldAppearance: options.fieldAppearance || 'outline',
             formGroup: options.formGroup ||
             [
                 {
-                    fieldAppearance: "outline",
                     fieldClasses: "m-1rem",
                     fieldLabel: "fieldLabel",
                     fieldLabelClasses: "small-text",

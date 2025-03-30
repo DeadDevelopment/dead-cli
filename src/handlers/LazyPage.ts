@@ -6,7 +6,6 @@ import { writeGeneratedFiles, GenerationResult } from '../utils/writer';
 export interface LazyPage {
     name: string,
     routes: {
-        path: string,
         outlet: string,
         component: string,
         mName: string
@@ -27,14 +26,12 @@ export async function generateLp(options: any): Promise<void> {
                 {
                     "component": "./component-one.component",
                     "mName": "ComponentOne",
-                    "outlet": "yo-outlet",
-                    "path": "routepath"
+                    "outlet": "yo-outlet"
                 },
                 {
                     "component": "./component-two.component",
                     "mName": "ComponentTwo",
-                    "outlet": "yo-outlet-again",
-                    "path": "routepathtwo"
+                    "outlet": "yo-outlet-again"
                 }
             ],
             outlets: options.outlets || [

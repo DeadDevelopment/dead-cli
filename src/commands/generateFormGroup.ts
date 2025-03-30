@@ -8,13 +8,13 @@ export function generateFormGroup(program: Command) {
         .description('Generat a form group of multiple fields.')
         .option('-n, --name <name>', 'Name of your files.', 'dead-form-group')
         .option('-g, --groupName <groupName>', 'Name of your form group.', 'form')
+        .option('-a, --fieldAppearance <fieldAppearance>', 'Appearanceof your form fields.', 'outline')
         .option(
             '-f, --formGroup <formGroup>',
             'JSON config of form group.',
             value => JSON.parse(value),
             JSON.stringify([
                 {
-                    fieldAppearance: "outline",
                     fieldClasses: "m-1rem",
                     fieldLabel: "fieldLabel",
                     fieldLabelClasses: "small-text",

@@ -14,14 +14,12 @@ export function generateLazyPage(program: Command) {
                 {
                     component: "./component-one.component",
                     mName: "ComponentOne",
-                    outlet: "yo-outlet",
-                    path: "routepath"
+                    outlet: "yo-outlet"
                 },
                 {
                     component: "./component-two.component",
                     mName: "ComponentTwo",
-                    outlet: "yo-outlet-again",
-                    path: "routepathtwo"
+                    outlet: "yo-outlet-again"
                 }
             ])
         )

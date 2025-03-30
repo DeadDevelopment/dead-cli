@@ -16,7 +16,7 @@ export async function generateId(options: any): Promise<void> {
             name: options.name || 'dead-image-div',
             imgSrc: options.imgSrc || 'https://firebasestorage.googleapis.com/v0/b/deaddevelopment-95591.appspot.com/o/dead_skull.PNG?alt=media&token=1634c2ba-f3e8-49db-bfd6-0b49576cba4a',
             imgAlt: options.imgAlt || 'Dead Development Logo',
-            classes: options.classes || ''
+            classes: options.classes || 'm-1rem'
         };
 
         const response = await axios.post(
