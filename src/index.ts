@@ -34,19 +34,38 @@ import { generateDatePicker } from "./commands/generateDatePicker";
 import { generateDivider } from "./commands/generateDivider";
 import { generateSlider } from "./commands/generateSlider";
 import { generateListButton } from "./commands/generateListButton";
+import { generateAutocomplete } from "./commands/generateAutocomplete";
+import { generateButtonBadge } from "./commands/generateButtonBadge";
+import { generateBottomModal } from "./commands/generateBottomModal";
+import { generateChipList } from "./commands/generateChipList";
+import { generateComponentCarousel } from "./commands/generateComponentCarousel";
+import { generateSideNav } from "./commands/generateSideNav";
+import { generateTimePicker } from "./commands/generateTimePicker";
+import { generateTooltip } from "./commands/generateTooltip";
+import { generateButtonToggle } from "./commands/generateButtonToggle";
+import { generateExpansionPanel } from "./commands/generateExpansionPanel";
+import { generateCheckboxList } from "./commands/generateCheckboxList";
 
 const program = new Command();
 
 program
     .name('dead')
     .description('Command line interface for DeadLibrary.')
-    .version('1.34.3')
+    .version('1.45.0')
 
+generateAutocomplete(program);
+generateBottomModal(program);
 generateButton(program);
+generateButtonBadge(program);
+generateButtonToggle(program);
 generateCard(program);
+generateCheckboxList(program);
+generateChipList(program);
+generateComponentCarousel(program);
 generateComponentList(program);
 generateDatePicker(program);
 generateDivider(program);
+generateExpansionPanel(program);
 generateFormField(program);
 generateFormGroup(program);
 generateGridList(program);
@@ -63,10 +82,13 @@ generateModal(program);
 generateMenu(program);
 generateRadioButton(program);
 generateSelect(program);
+generateSideNav(program);
 generateSlider(program);
 generateSlideToggle(program);
 generateTabs(program);
 generateToolbar(program);
+generateTooltip(program);
+generateTimePicker(program);
 generateTitleParagraph(program);
 generateTitleSubParagraphButton(program);
 generateTitleButton(program);
