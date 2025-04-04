@@ -1,11 +1,19 @@
 export const LOCAL_BASE_URL = "http://127.0.0.1:5001/deadlibrary-53c38/us-central1/"
 
 export const ENDPOINTS = {
+    autocomplete: `${LOCAL_BASE_URL}generateAutocomplete`,
     button: `${LOCAL_BASE_URL}generateButton`,
+    buttonBadge: `${LOCAL_BASE_URL}generateButtonBadge`,
+    buttonToggle: `${LOCAL_BASE_URL}generateButtonToggle`,
+    bottomModal: `${LOCAL_BASE_URL}generateBottomModal`,
     card: `${LOCAL_BASE_URL}generateCard`,
+    checkboxList: `${LOCAL_BASE_URL}generateCheckboxList`,
+    chipList: `${LOCAL_BASE_URL}generateChipList`,
+    componentCarousel: `${LOCAL_BASE_URL}generateComponentCarousel`,
     componentList: `${LOCAL_BASE_URL}generateComponentList`,
     datePicker: `${LOCAL_BASE_URL}generateDatePicker`,
     divider: `${LOCAL_BASE_URL}generateDivider`,
+    expansionPanel: `${LOCAL_BASE_URL}generateExpansionPanel`,
     formField: `${LOCAL_BASE_URL}generateFormField`,
     formGroup: `${LOCAL_BASE_URL}generateFormGroup`,
     gridList: `${LOCAL_BASE_URL}generateGridList`,
@@ -22,10 +30,12 @@ export const ENDPOINTS = {
     modal: `${LOCAL_BASE_URL}generateModal`,
     radioButton: `${LOCAL_BASE_URL}generateRadioButton`,
     select: `${LOCAL_BASE_URL}generateSelect`,
+    sideNav: `${LOCAL_BASE_URL}generateSideNav`,
     slider: `${LOCAL_BASE_URL}generateSlider`,
     slideToggle: `${LOCAL_BASE_URL}generateSlideToggle`,
     tabs: `${LOCAL_BASE_URL}generateTabs`,
     theme: `${LOCAL_BASE_URL}generateTheme`,
+    timePicker: `${LOCAL_BASE_URL}generateTimePicker`,
     titleButton: `${LOCAL_BASE_URL}generateTitleButton`,
     titleList: `${LOCAL_BASE_URL}generateTitleList`,
     titleParagraph: `${LOCAL_BASE_URL}generateTitleParagraph`,
@@ -35,4 +45,5 @@ export const ENDPOINTS = {
     titleSubParagraph: `${LOCAL_BASE_URL}generateTitleSubParagraph`,
     titleSubParagraphButton: `${LOCAL_BASE_URL}generateTitleSubParagraphButton`,
     toolbar: `${LOCAL_BASE_URL}generateToolbar`,
+    tooltip: `${LOCAL_BASE_URL}generateTooltip`,
 }
