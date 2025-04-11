@@ -42,7 +42,7 @@ export function generateComponentCarousel(program: Command) {
         })
     )
     .option(
-        '-n, --nIcon <nIcon>',
+        '--ni, --nIcon <nIcon>',
         'Next icon button config.',
         value => JSON.parse(value),
         JSON.stringify({

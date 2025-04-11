@@ -3,47 +3,34 @@ import { ERRORS, MSGS } from '../utils/utils';
 import { ENDPOINTS } from '../utils/endpoints';
 import { writeGeneratedFiles, GenerationResult } from '../utils/writer';
 
-export interface Menu {
+export interface Breakp {
     name: string,
-    menuTrig: {
-        buttonType: string,
-        icon: string,
-        classes: string
-    },
-    menuItems: {
-        label: string,
-        routerLink: string
-    }[]
+    mPoint: number, // px
+    dPoint: number // px
 }
 
-export async function generateM(options: any): Promise<void> {
-    try{
-        const payload: Menu = {
-            name: options.name || 'dead-menu',
-            menuTrig: options.menuTrig || {"buttonType": "mat-fab", "classes": "size-4rem", "icon": "menu"},
-            menuItems: options.menuItems || [{"label": "Link", "routerLink": "/route"}],
-        };
+export async function generateBps(options: any): Promise<void> {
+    try {
+        const payload: Breakp = {
+            name: options.name || 'dead-breakpoint',
+            mPoint: options.mPoint ? parseInt(options.mPoint) : 600,
+            dPoint: options.dPoint ? parseInt(options.dPoint) : 1000,
+        }
 
         const response = await axios.post(
-            ENDPOINTS.menu,
+            ENDPOINTS.breakPoint,
             payload
         );
 
         if (response.data.success && response.data.result) {
+            
             const baseName = options.name;
             const result: GenerationResult = { ...response.data.result };
       
-
-            if (!result.scss) {
-                result.scss = ''; // create an empty SCSS file
-            }
-      
             // Define filename templates. You can customize these as needed.
             const filenameMap = {
-                html: '{name}.component.html',
-                ts: '{name}.component.ts',
-                scss: '{name}.component.scss',
-                spec: '{name}.component.spec.ts'
+                ts: '{name}.service.ts',
+                spec: '{name}.service.spec.ts'
             };
       
             await writeGeneratedFiles({
@@ -54,10 +41,11 @@ export async function generateM(options: any): Promise<void> {
             });
 
             console.log(MSGS.SUCCESS);
-        } else {
+          } else {
             console.error(ERRORS.HANDLER_TRY);
-        }
+          }
     } catch (error: any) {
         console.error('Error:', error.message);
     }
 }
+

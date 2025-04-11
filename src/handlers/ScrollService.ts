@@ -3,47 +3,30 @@ import { ERRORS, MSGS } from '../utils/utils';
 import { ENDPOINTS } from '../utils/endpoints';
 import { writeGeneratedFiles, GenerationResult } from '../utils/writer';
 
-export interface Menu {
+export interface scrolls {
     name: string,
-    menuTrig: {
-        buttonType: string,
-        icon: string,
-        classes: string
-    },
-    menuItems: {
-        label: string,
-        routerLink: string
-    }[]
 }
 
-export async function generateM(options: any): Promise<void> {
-    try{
-        const payload: Menu = {
-            name: options.name || 'dead-menu',
-            menuTrig: options.menuTrig || {"buttonType": "mat-fab", "classes": "size-4rem", "icon": "menu"},
-            menuItems: options.menuItems || [{"label": "Link", "routerLink": "/route"}],
+export async function generateScrollS(options: any): Promise<void> {
+    try {
+        const payload: scrolls = {
+            name: options.name || 'dead-scroll',
         };
 
         const response = await axios.post(
-            ENDPOINTS.menu,
+            ENDPOINTS.scrollService,
             payload
         );
 
         if (response.data.success && response.data.result) {
+            
             const baseName = options.name;
             const result: GenerationResult = { ...response.data.result };
       
-
-            if (!result.scss) {
-                result.scss = ''; // create an empty SCSS file
-            }
-      
             // Define filename templates. You can customize these as needed.
             const filenameMap = {
-                html: '{name}.component.html',
-                ts: '{name}.component.ts',
-                scss: '{name}.component.scss',
-                spec: '{name}.component.spec.ts'
+                ts: '{name}.service.ts',
+                spec: '{name}.service.spec.ts'
             };
       
             await writeGeneratedFiles({
@@ -54,10 +37,11 @@ export async function generateM(options: any): Promise<void> {
             });
 
             console.log(MSGS.SUCCESS);
-        } else {
+          } else {
             console.error(ERRORS.HANDLER_TRY);
-        }
+          }
     } catch (error: any) {
         console.error('Error:', error.message);
     }
 }
+

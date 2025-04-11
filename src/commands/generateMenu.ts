@@ -20,8 +20,8 @@ export function generateMenu(program: Command) {
             'Choose your options',
             (value) => JSON.stringify(value),
             JSON.stringify([
-                {"label": "Link", "routerLink": "/route"},
-                {"label": "Link2", "routerLink": "/route2"}
+                {label: "Link", routerLink: "/route"},
+                {label: "Link2", routerLink: "/route2"}
             ])
         )
         .action(async (options) => {

@@ -4,7 +4,7 @@ import { generatetimep } from '../handlers/TimePicker';
 export function generateTimePicker(program: Command) {
     program
     .command('generateTimePicker')
-    .alias('tp')
+    .alias('timep')
     .description('Generate a time picker input command.')
     .option(
         '-n, --name <name>',
