@@ -16,7 +16,7 @@ export interface TitleSubParagraph {
     paragraph: {
         text: string,
         classes: string
-    } 
+    }
 }
 
 export async function generateTsp(options: any): Promise<void> {

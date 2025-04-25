@@ -45,16 +45,29 @@ import { generateTooltip } from "./commands/generateTooltip";
 import { generateButtonToggle } from "./commands/generateButtonToggle";
 import { generateExpansionPanel } from "./commands/generateExpansionPanel";
 import { generateCheckboxList } from "./commands/generateCheckboxList";
+import { generateBreakpointService } from "./commands/generateBreakpointService";
+import { generateThemeChangerMenu } from "./commands/generateThemeChangerMenu";
+import { generateThemeChangerService } from "./commands/generateThemeChangerService";
+import { generatePhoneDirective } from "./commands/generatePhoneDirective";
+import { generateAppConfig } from "./commands/generateAppConfig";
+import { generateIndexConfig } from "./commands/generateIndexConfig";
+import { generateScrollService } from "./commands/generateScrollService";
+import { generateLoadingService } from "./commands/generateLoadingService";
+import { g } from "./commands/g";
 
 const program = new Command();
 
 program
     .name('dead')
     .description('Command line interface for DeadLibrary.')
-    .version('1.45.0')
+    .version('1.54.0')
 
+g(program);
+
+generateAppConfig(program);
 generateAutocomplete(program);
 generateBottomModal(program);
+generateBreakpointService(program);
 generateButton(program);
 generateButtonBadge(program);
 generateButtonToggle(program);
@@ -73,14 +86,18 @@ generateIcon(program);
 generateIconParagraph(program);
 generateImageCarousel(program);
 generateImageDiv(program);
+generateIndexConfig(program);
 generateLazyPage(program);
 generateListButton(program);
 generateLoadingBar(program);
+generateLoadingService(program);
 generateLoadingSpinner(program);
 generateMobileToolbar(program);
 generateModal(program);
 generateMenu(program);
+generatePhoneDirective(program);
 generateRadioButton(program);
+generateScrollService(program);
 generateSelect(program);
 generateSideNav(program);
 generateSlider(program);
@@ -98,6 +115,7 @@ generateTitleSubListButton(program);
 generateTitleSubParagraph(program);
 generateTitleParagraphButton(program);
 generateTheme(program);
-
+generateThemeChangerMenu(program);
+generateThemeChangerService(program);
 
 program.parse(process.argv);

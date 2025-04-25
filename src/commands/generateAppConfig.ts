@@ -1,7 +1,7 @@
 import { Command } from 'commander';
-import { generateAppConfig } from '../handlers/AppConfig';
+import { generateAppC } from '../handlers/AppConfig';
 
-export function appConfig(program: Command) {
+export function generateAppConfig(program: Command) {
     program
     .command('generateAppConfig')
     .alias('ac')
@@ -66,7 +66,7 @@ export function appConfig(program: Command) {
     )
     .action(async (options) => {
         try {
-            await generateAppConfig(options);
+            await generateAppC(options);
         } catch (error: any) {
             console.error('Error generating code:', error.message);
         }

@@ -33,12 +33,12 @@ export async function generateTh(options: any): Promise<void> {
             regularWeight: options.regularWeight ? parseInt(options.regularWeight) : 400,
             boldWeight: options.boldWeight ? parseInt(options.boldWeight): 700,
             colors: options.colors || {
-                "primary": "#a784c2",
-                "primaryLight": "#f5f5f5",
-                "primaryDark": "#666",
-                "secondary": "#cf929a",
-                "background": "#0a0908",
-                "error": "#f94144"
+                primary: "#a784c2",
+                primaryLight: "#f5f5f5",
+                primaryDark: "#666",
+                secondary: "#cf929a",
+                background: "#0a0908",
+                error: "#f94144"
             },
             density: options.density || '0'
         }

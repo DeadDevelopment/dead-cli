@@ -8,7 +8,7 @@ export function generateThemeChangerMenu(program: Command) {
     .description('Generate a component that contains a menu that injects the themechanger service to change themes.')
     .option('-n, --name <name>', 'Name your files.', 'dead-theme-changer-menu')
     .option(
-        '--mt, menuTrigger <menuTrigger>',
+        '-g, --menuTrig <menuTrig>',
         'Choose your options.',
         (value) => JSON.parse(value),
         JSON.stringify({
@@ -16,9 +16,9 @@ export function generateThemeChangerMenu(program: Command) {
         })
     )
     .option(
-        '-m, menuItems <menuItems>',
+        '-m, --menuItems <menuItems>',
         'Choose your options.',
-        (value) => JSON.stringify(value),
+        (value) => JSON.parse(value),
         JSON.stringify([
             {label: "Dead Theme"},
             {label: "Light Theme"}
@@ -31,6 +31,7 @@ export function generateThemeChangerMenu(program: Command) {
         JSON.stringify([
             {
                 themeName: "DarkMode",
+                methodName: "setDarkMode",
                 primary: "#1E88E5",
                 primaryLight: "#6AB7FF",
                 primaryDark: "#005CB2",
@@ -40,6 +41,7 @@ export function generateThemeChangerMenu(program: Command) {
             },
             {
                 themeName: "LightMode",
+                methodName: "setLightMode",
                 primary: "#1976D2",
                 primaryLight: "#63A4FF",
                 primaryDark: "#004BA0",
@@ -66,3 +68,4 @@ export function generateThemeChangerMenu(program: Command) {
         }
     });
 }
+

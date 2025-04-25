@@ -5,7 +5,7 @@ import { writeGeneratedFiles, GenerationResult } from '../utils/writer';
 
 export interface cc {
     name: string,
-    carousel: { // wrapper
+    carousel: {
         classes: string,
         seconds: string
     },

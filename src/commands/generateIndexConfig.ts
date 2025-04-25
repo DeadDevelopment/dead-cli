@@ -36,7 +36,7 @@ export function generateIndexConfig(program: Command) {
         ])
     )
     .option(
-        '-t, --twitterSEO <twitterSEO>',
+        '--ts, --twitterSEO <twitterSEO>',
         'Configure your SEO properties for twitter (X).',
         (value) => JSON.parse(value),
         JSON.stringify([

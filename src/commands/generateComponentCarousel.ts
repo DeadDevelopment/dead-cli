@@ -8,15 +8,17 @@ export function generateComponentCarousel(program: Command) {
     .description('Generate a componenet carousel component.')
     .option('-n, --name <name>', 'Name your files.', 'dead-component-carousel')
     .option(
-        '-r, --carousel',
+        '--car, --carousel <carousel>',
         'Config the carousel',
-        value => JSON.parse(value),
-        JSON.stringify({classes: "m-1rem", seconds: "0.3"})
+        (value) => JSON.parse(value),
+        JSON.stringify(
+            {classes: "m-1rem", seconds: "0.3"}
+        )
     )
     .option(
         '-c, --components <components>',
         'Array of component class names',
-        value => JSON.parse(value),
+        (value) => JSON.parse(value),
         JSON.stringify(
             [
                 {fileName: "COne"},
@@ -28,7 +30,7 @@ export function generateComponentCarousel(program: Command) {
     .option(
         '-o, --controls <controls>',
         'Controls config json obj.',
-        value => JSON.parse(value),
+        (value) => JSON.parse(value),
         JSON.stringify({
             bType: "mat-flat-button", classes: "button-text"
         })
@@ -36,7 +38,7 @@ export function generateComponentCarousel(program: Command) {
     .option(
         '-p, --pIcon <pIcon>',
         'Previous icon button config.',
-        value => JSON.parse(value),
+        (value) => JSON.parse(value),
         JSON.stringify({
             ariaLabel: "Icon name.", fontIcon: "arrow_left", classes: "pri m-1rem"
         })
@@ -44,7 +46,7 @@ export function generateComponentCarousel(program: Command) {
     .option(
         '--ni, --nIcon <nIcon>',
         'Next icon button config.',
-        value => JSON.parse(value),
+        (value) => JSON.parse(value),
         JSON.stringify({
             ariaLabel: "Icon name.", fontIcon: "arrow_right", classes: "pri m-1rem"
         })

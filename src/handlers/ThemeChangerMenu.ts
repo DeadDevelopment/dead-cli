@@ -14,7 +14,7 @@ export interface themeMenu {
         label: string
     }[],
     themes: {
-        methodName: string, // ex. '() => this.methodName(),'
+        methodName: string,
         themeName: string,
         primary: string,
         primaryLight: string,
@@ -34,39 +34,43 @@ export async function generateTCM(options: any): Promise<void> {
         const payload: themeMenu = {
             name: options.name || 'dead-theme-changer-menu',
             menuTrig: options.menuTrig || {
-                "buttonType": "mat-flat-button",
-                "classes": "m-1rem button-text",
-                "icon": "menu"
+                buttonType: "mat-flat-button",
+                classes: "m-1rem button-text",
+                icon: "menu"
             },
             menuItems: options.menuItems || [
-                {"label": "Dead Theme"},
-                {"label": "Light Theme"}
+                {label: "Dead Theme"},
+                {label: "Light Theme"}
             ],
             themes: options.themes || [
                 {
-                    "themeName": "DarkMode",
-                    "primary": "#1E88E5",
-                    "primaryLight": "#6AB7FF",
-                    "primaryDark": "#005CB2",
-                    "secondary": "#FF7043",
-                    "error": "#EF5350",
-                    "background": "#121212"
+                    themeName: "DarkMode",
+                    methodName: "setDarkMode",
+                    primary: "#1E88E5",
+                    primaryLight: "#6AB7FF",
+                    primaryDark: "#005CB2",
+                    secondary: "#FF7043",
+                    error: "#EF5350",
+                    background: "#121212"
                 },
                 {
-                    "themeName": "LightMode",
-                    "primary": "#1976D2",
-                    "primaryLight": "#63A4FF",
-                    "primaryDark": "#004BA0",
-                    "secondary": "#FF8A65",
-                    "error": "#D32F2F",
-                    "background": "#FFFFFF"
+                    themeName: "LightMode",
+                    methodName: "setLightMode",
+                    primary: "#1976D2",
+                    primaryLight: "#63A4FF",
+                    primaryDark: "#004BA0",
+                    secondary: "#FF8A65",
+                    error: "#D32F2F",
+                    background: "#FFFFFF"
                 }  
             ],
             themeService: options.themeService || {
-                "name": "ThemeChanger",
-                "path": "../../services/ThemeChanger.service"
+                name: "ThemeChanger",
+                path: "../../services/ThemeChanger.service"
             }
         };
+
+        console.log('Payload being sent:', JSON.stringify(payload, null, 2));
 
         const response = await axios.post(
             ENDPOINTS.themeChangerMenu,

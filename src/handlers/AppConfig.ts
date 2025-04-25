@@ -32,7 +32,7 @@ export interface appConfig {
     }[]
 }
 
-export async function generateAppConfig(options: appConfig): Promise<void> {
+export async function generateAppC(options: appConfig): Promise<void> {
     try {
         const payload: appConfig = {
             app: options.app || {
