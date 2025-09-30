@@ -1,0 +1,36 @@
+{
+  "name": "@dead-development/deadlibrary-cli",
+  "version": "0.1.0",
+  "description": "Generate Angular code.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "author": "Dead Development LLC",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "axios": "^1.8.1",
+    "chalk": "^4.1.2",
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.1",
+    "firebase": "^12.2.1",
+    "ora": "^8.2.0",
+    "prompts": "^2.4.2",
+    "wrap-ansi": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.13.8",
+    "@types/prompts": "^2.4.9",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "bin": {
+    "dead": "./dist/index.js"
+  }
+}
