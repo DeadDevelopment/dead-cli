@@ -2,16 +2,21 @@ import prettier from 'prettier';
 
 export async function formatContent(content: string, parser: prettier.BuiltInParserName): Promise<string> {
   try {
-    return prettier.format(content, {
+    const formatted = await prettier.format(content, {
       parser,
-      // Trick Prettier into thinking it's a real file
-      filepath: parser === 'typescript' ? 'file.ts' : undefined,
-      // Optionally you can add these:
-      tabWidth: 2, // or whatever your team prefers
+      filepath: parser === 'typescript' ? 'file.ts' : parser === 'html' ? 'file.html' : 'file.scss',
+      tabWidth: 2,
       useTabs: false,
+      semi: true,
+      singleQuote: true,
+      printWidth: 100,
+      bracketSpacing: true,
+      arrowParens: 'always',
     });
+    console.log('prettier is done.')
+    return formatted;
   } catch (error) {
-    console.error('Prettier formatting failed:', error);
-    return content; // Fall back to original if formatting fails
+    console.error(`Prettier formatting failed for parser "${parser}":`, error);
+    return content; // Return unformatted on error
   }
 }

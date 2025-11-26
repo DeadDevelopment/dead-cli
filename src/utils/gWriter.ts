@@ -1,13 +1,15 @@
 // src/utils/gWriter.ts
 import { promises as fs } from 'fs'
 import * as path from 'path'
+import prettier from 'prettier';
 import { formatContent } from './formatter'
 import { ui } from './ui'
+import { sanitizeCodeString } from './utils'
 
 export interface NormalizedFile {
   name: string
   content: string
-  type?: 'typescript' | 'html' | 'scss' // parser for prettier
+  type?: 'logic' | 'template' | 'styles' | 'test' // parser for prettier
 }
 
 export interface WriteFilesOptions {
@@ -17,7 +19,7 @@ export interface WriteFilesOptions {
 }
 
 export async function writeGeneratedFiles(options: WriteFilesOptions): Promise<void> {
-  // Test mode: do not write — capture instructions for assertions
+  // Test mode: do not write - capture instructions for assertions
   if (typeof global !== 'undefined' && (global as any).__disableFileWrites__) {
     if (typeof global !== 'undefined') {
       (global as any).__writeInstructions__ = options
@@ -37,22 +39,33 @@ export async function writeGeneratedFiles(options: WriteFilesOptions): Promise<v
   for (const file of files) {
     const filePath = path.join(containerDir, file.name)
 
-    let formattedContent = file.content
-    // Format based on type
-    if (file.type === 'typescript') {
-      formattedContent = await formatContent(formattedContent, 'typescript')
-    } else if (file.type === 'html') {
-      formattedContent = await formatContent(formattedContent, 'html')
-    } else if (file.type === 'scss') {
-      formattedContent = await formatContent(formattedContent, 'scss')
+    let fileType = file.type;
+    if (!fileType) {
+      if (file.name.endsWith('.ts')) fileType = 'logic';
+      else if (file.name.endsWith('.spec.ts')) fileType = 'test'; // Check spec first!
+      else if (file.name.endsWith('.html')) fileType = 'template';
+      else if (file.name.endsWith('.scss') || file.name.endsWith('.css')) fileType = 'styles';
     }
 
-    await fs.writeFile(filePath, formattedContent, 'utf8')
-    const bytes = Buffer.byteLength(formattedContent, 'utf8')
+    // 1. Sanitize raw output
+    let cleanContent = sanitizeCodeString(file.content)
+
+    // Map to parser type
+    let parserType: prettier.BuiltInParserName | undefined;
+    if (fileType === 'logic' || fileType === 'test') parserType = 'typescript'; // Both use typescript parser
+    else if (fileType === 'template') parserType = 'angular';
+    else if (fileType === 'styles') parserType = 'scss';
+
+    // Format if we have a parser
+    if (parserType) {
+      cleanContent = await formatContent(cleanContent, parserType)
+    }
+
+    await fs.writeFile(filePath, cleanContent, 'utf8')
+    const bytes = Buffer.byteLength(cleanContent, 'utf8')
     totalBytes += bytes
     count += 1
 
-    // Quiet, consistent line per file (brand colors)
     console.log(`${ui.dim('write: ')} ${ui.label(filePath)} ${ui.dim(`(${bytes} B)`)}`)
   }
 }
