@@ -1,6 +1,6 @@
 {
   "name": "@dead-development/deadlibrary-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generate Angular code.",
   "main": "./dist/index.js",
   "scripts": {

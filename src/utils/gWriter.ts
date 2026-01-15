@@ -53,7 +53,7 @@ export async function writeGeneratedFiles(options: WriteFilesOptions): Promise<v
     // Map to parser type
     let parserType: prettier.BuiltInParserName | undefined;
     if (fileType === 'logic' || fileType === 'test') parserType = 'typescript'; // Both use typescript parser
-    else if (fileType === 'template') parserType = 'angular';
+    else if (fileType === 'template') parserType = 'html';
     else if (fileType === 'styles') parserType = 'scss';
 
     // Format if we have a parser

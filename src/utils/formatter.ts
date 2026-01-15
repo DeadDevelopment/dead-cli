@@ -12,6 +12,7 @@ export async function formatContent(content: string, parser: prettier.BuiltInPar
       printWidth: 100,
       bracketSpacing: true,
       arrowParens: 'always',
+      htmlWhitespaceSensitivity: 'ignore',
     });
     console.log('prettier is done.')
     return formatted;
