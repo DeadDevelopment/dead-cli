@@ -1,4 +1,4 @@
-# @dead-development/deadlibrary-cli
+## DeadLibrary CLI
 ### Visit https://deaddevelopment.com/docs for more information on how to use DeadLibrary CLI
 
 ### Installation
