@@ -1,6 +1,8 @@
-## DeadLibrary CLI
-### Visit https://deaddevelopment.com/docs for more information on how to use DeadLibrary CLI
+## Visit https://deaddevelopment.com/docs for 
+## more information on how to use DeadLibrary CLI
 
-### Installation
+# @dead-development/deadlibrary-cli
+
+## Installation
 ```bash
-npm install -g https://github.com/DeadDevelopment/dead-cli/releases/download/0.2.0/dead-development-deadlibrary-cli-0.2.0.tgz
+npm install -g https://github.com/DeadDevelopment/dead-cli/releases/download/0.2.1/dead-development-deadlibrary-cli-0.2.1.tgz

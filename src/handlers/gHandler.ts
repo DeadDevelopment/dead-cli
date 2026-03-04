@@ -16,8 +16,9 @@ export async function gHandler(raw: string, options: { ai?: string }) {
     const payload: any = { raw };
     if (typeof options.ai === "string") payload.useAI = options.ai;
 
+    /** set to gLocal for dev env */
     return axios.post(
-      ENDPOINTS.gLocal,
+      ENDPOINTS.g,
       payload,
       {
         headers: {

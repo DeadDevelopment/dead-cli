@@ -8,13 +8,12 @@ export const MSGS = {
 
 export function sanitizeCodeString(content: string): string {
   return content
-    // Remove all leading whitespace from every line
-    .split('\n')
-    .map(line => line.trimStart())
-    .join('\n')
+    // Break after semicolons followed by a non-whitespace character on the same line
+    .replace(/;([^\n])/g, ';\n$1')
+    // Break after closing braces followed by a non-whitespace character on the same line
+    .replace(/\}([^\n,;)\]])/g, '}\n$1')
     // Remove excessive newlines
     .replace(/\n{3,}/g, '\n\n')
-    // Trim and ensure single trailing newline
     .trim() + '\n';
 }
 

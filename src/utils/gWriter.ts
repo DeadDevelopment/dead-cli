@@ -41,8 +41,8 @@ export async function writeGeneratedFiles(options: WriteFilesOptions): Promise<v
 
     let fileType = file.type;
     if (!fileType) {
-      if (file.name.endsWith('.ts')) fileType = 'logic';
-      else if (file.name.endsWith('.spec.ts')) fileType = 'test'; // Check spec first!
+      if (file.name.endsWith('.spec.ts')) fileType = 'test'; // Check spec first!
+      else if (file.name.endsWith('.ts')) fileType = 'logic';
       else if (file.name.endsWith('.html')) fileType = 'template';
       else if (file.name.endsWith('.scss') || file.name.endsWith('.css')) fileType = 'styles';
     }
