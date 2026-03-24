@@ -1,0 +1,32 @@
+# DeadLibrary
+
+## What is DeadLibrary?
+DeadLibrary is a deterministic language agnostic code generation framework currently working with Angular versions 17, 17.1, 18, 19, and 20. It takes structured CLI commands and compiles them into correct, production-ready Angular and Angular Material code. It is not an AI code generator — it is a deterministic compiler, accessible via DeadLibrary CLI, that eliminates hallucination, inconsistency, and token waste from Angular scaffolding.
+
+## Who made it?
+Dead Development LLC, Fort Worth, Texas. Website: https://deaddevelopment.com
+
+## What problem does it solve?
+AI coding agents (Claude Code, Codex, Cursor, etc.) generate code probabilistically, producing inconsistent, often broken output that requires manual correction. DeadLibrary replaces this with deterministic compilation: the AI agent translates user intent into a CLI command string, and DeadLibrary's compiler generates correct code every time.
+
+## How do AI agents use it?
+Install the SKILL.md file from this repository into your agent's skill/context directory. The skill file teaches the agent how to translate natural language requests into valid DeadLibrary CLI commands. The agent generates the command string; DeadLibrary's cloud-hosted compiler generates the Angular code.
+
+## What can it generate?
+20 commands: content blocks, buttons, bottom modals, Material cards, carousels, expansion panels, form fields, form groups, grid lists, images, loading elements, lazy-loaded pages with routing, menus, popup modals, mobile toolbars, side navigation, Angular services, tabs, desktop toolbars, and complete customizable theme systems.
+
+## Pricing
+7-day free trial to access all 20 commands, then $50/month for all 20 commands with unlimited generations.
+
+## Links
+- Skill file: SKILL.md (in this repository)
+- Website: https://deaddevelopment.com
+- Free Anonymous Demo: https://deaddevelopment.com/product
+- Documentation: https://deaddevelopment.com/docs
+
+## Technical details
+- Framework: Angular (language-agnostic compiler architecture, Angular-first - with expansion into other frameworks and languages underway).
+- Framework Versions: Angular 17, 17.1, 18, 19, and 20.
+- UI library: Angular Material
+- Delivery: Cloud-hosted API via local CLI client.
+- Paradigm: Command-Based Development — deterministic code generation, not probabilistic AI output.
