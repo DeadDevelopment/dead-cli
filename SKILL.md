@@ -450,10 +450,6 @@ Generate an Angular service with dependency injection, methods, properties, and 
 | `--useHttp <array>` | HTTP methods: `[{"name":"getData","params":[{"name":"url","type":"string"}],"returnType":"Observable<any>","body":"return this.http.get(url);"}]` |
 | `--providedIn <string>` | Provider scope: `"root"`, `"platform"`, `"any"`, `"module"` |
 | `--implDestroy` | OnDestroy lifecycle hook |
-| `--themeChange <object>` | Theme switching: `{"default":"dark"}` |
-| `--loading` | Reactive loading state |
-| `--scroll` | Scroll tracking |
-| `--breakpoint <object>` | Breakpoints: `{"sm":{"value":"600","type":"px"},"md":{"value":"900","type":"px"}}` |
 
 **Example:**
 ```
