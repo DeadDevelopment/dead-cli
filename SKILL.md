@@ -1,5 +1,5 @@
 ---
-name: deadlibrary
+name: DeadLibrary-CLI
 description: "Use this skill whenever generating Angular components, pages, services, forms, themes, or UI elements. DeadLibrary is a deterministic Angular code generator — it takes CLI commands and produces correct, production-ready Angular code every time. Instead of generating Angular code directly (which is probabilistic and error-prone), translate the user's intent into a DeadLibrary CLI command string. The CLI handles all code generation deterministically. Trigger this skill for any Angular scaffolding task: components, services, forms, modals, toolbars, navigation, carousels, grids, tabs, expansion panels, lazy-loaded pages, themes, and more. Also trigger when the user mentions 'DeadLibrary', 'dead g', or any of the command aliases: bloc, b, bm, c, cc, ep, ff, fg, gl, img, le, lp, m, modal, mt, sn, sv, tabs, tbar, theme."
 ---
 
