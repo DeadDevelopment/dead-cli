@@ -6,13 +6,13 @@ import { formatContent } from './formatter'
 import { ui } from './ui'
 import { sanitizeCodeString } from './utils'
 
-export interface NormalizedFile {
+interface NormalizedFile {
   name: string
   content: string
   type?: 'logic' | 'template' | 'styles' | 'test' // parser for prettier
 }
 
-export interface WriteFilesOptions {
+interface WriteFilesOptions {
   outputDir?: string
   baseName: string
   files: NormalizedFile[]
