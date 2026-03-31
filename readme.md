@@ -71,7 +71,7 @@ The `SKILL.md` file contains:
 
 ```bash
 # Clone into your skills directory
-git clone https://github.com/deaddevelopment/deadlibrary-skill.git ~/.claude/skills/deadlibrary-skill
+git clone https://github.com/DeadDevelopment/DeadLibrary-CLI.git ~/.claude/skills/deadlibrary-skill
 ```
 
 Or manually copy `SKILL.md` into `~/.claude/skills/deadlibrary-skill/SKILL.md`.
@@ -79,7 +79,7 @@ Or manually copy `SKILL.md` into `~/.claude/skills/deadlibrary-skill/SKILL.md`.
 ### Codex CLI
 
 ```bash
-git clone https://github.com/deaddevelopment/deadlibrary-skill.git ~/.codex/skills/deadlibrary-skill
+git clone https://github.com/DeadDevelopment/DeadLibrary-CLI.git ~/.codex/skills/deadlibrary-skill
 ```
 
 ### Cursor / Windsurf / Other Agents
